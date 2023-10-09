@@ -1,0 +1,22 @@
+server:
+  port: 8884
+
+
+spring:
+  application:
+    name: community
+
+
+
+  data:
+    #数据库
+    mongodb:
+      uri: mongodb://localhost:27017
+      database: "pods"
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        username: nacos
+        password: nacos

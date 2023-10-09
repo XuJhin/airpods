@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: gateway
+
+  main:
+    web-application-type: reactive
+
+  cloud:
+    nacos:
+      discovery:
+        password: nacos
+        username: nacos
+      server-addr: 127.0.0.1:8848
+
+    gateway:
+      discovery:
+        locator:
+          enabled: false
+      routes:
+        - id: USER
+          uri: lb://user
+          predicates:
+            - Path=/user/**
+        - id: COMMUNITY
+          uri: lb://community
+          predicates:
+            - Path=/community/**
+server:
+  port: 10010
+logging:
+  level:
+    org.springframework.cloud.gateway: trace
+
