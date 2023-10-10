@@ -10,15 +10,12 @@ import org.springframework.web.client.RestTemplate
 
 @SpringBootApplication
 @EnableDiscoveryClient
-@ComponentScan(basePackages = ["com.xujhin.core","com.xujhin.gateway"])
+@ComponentScan(basePackages = ["com.xujhin.core","com.xujhin.gateway","com.xujhin.lib"])
 open class GatewayApplication
 
 fun main(args: Array<String>) {
     runApplication<GatewayApplication>(*args)
 
-    @Bean
-    fun restTemplate():RestTemplate{
-        return RestTemplate()
-    }
+
 }
 

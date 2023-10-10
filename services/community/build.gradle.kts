@@ -9,6 +9,7 @@ dependencies {
     implementation(project(":lib:common"))
     implementation(project(":lib:redis"))
     implementation("org.springframework.boot:spring-boot-starter-data-mongodb-reactive")
+    implementation("com.alibaba.cloud:spring-cloud-starter-alibaba-sentinel")
 }
 
 // 取消打包为 bootJar 可独立运行包，因为 common 只是一个普通的 JAR 包

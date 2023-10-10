@@ -5,7 +5,7 @@ import com.xujhin.core.redis.service.RedisService
 import com.xujhin.gateway.config.propertoes.IgnoreWhiteProperties
 import com.xujhin.lib.constant.CacheConstants
 import com.xujhin.lib.constant.SecurityConstants
-import com.xujhin.lib.utils.JwtManager
+import com.xujhin.lib.jwt.JwtManager
 import com.xujhin.lib.utils.ServletUtil
 import com.xujhin.lib.utils.StringUtil
 import io.jsonwebtoken.Claims
@@ -38,7 +38,7 @@ class AuthFilter : GlobalFilter, Ordered {
     lateinit var redisService: RedisService
 
     @Autowired
-    lateinit var jwtManager:JwtManager
+    lateinit var jwtManager: JwtManager
 
     companion object {
         const val GATEWAY_PREFIX = "/api"
@@ -77,7 +77,7 @@ class AuthFilter : GlobalFilter, Ordered {
         if (StringUtil.matches(path, ignoreWhite.getWhites())) {
             return chain.filter(exchange)
         }
-
+        return chain.filter(exchange)
         val token = getToken(request)
         if (token.isNullOrEmpty()) {
             return unauthorizedResponse(exchange, "token 为空")

@@ -70,6 +70,8 @@ subprojects {
         implementation("com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-discovery:$nacosVersion")
         // NACOS配置
         implementation("com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-config:$nacosVersion")
+        // sentinel
+        implementation("com.alibaba.cloud:spring-cloud-starter-alibaba-sentinel")
         // 谷歌工具包
         implementation("com.google.guava:guava:$guavaVersion")
         // 缓存

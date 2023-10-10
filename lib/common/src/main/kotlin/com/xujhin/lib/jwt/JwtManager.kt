@@ -1,4 +1,4 @@
-package com.xujhin.lib.utils
+package com.xujhin.lib.jwt
 
 import com.xujhin.lib.constant.SecurityConstants
 import com.xujhin.lib.constant.TokenConstants
